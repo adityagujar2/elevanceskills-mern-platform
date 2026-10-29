@@ -2,7 +2,7 @@
 
 An educational MERN stack project to demonstrate six video-platform modules for the ElevanceSkills internship assignment.
 
-> **Project status:** The repository currently contains the initial application scaffold and dashboard. The six feature modules are planned work and are not yet implemented.
+> **Project status:** The repository contains the React dashboard and Express/MongoDB foundation. GitHub Pages deployment is configured for the frontend demo. The six assignment modules are not yet production-complete; payment, authentication, quota enforcement, and real-time calling require backend configuration and testing.
 
 ## Technology stack
 
@@ -42,6 +42,14 @@ An educational MERN stack project to demonstrate six video-platform modules for 
 - Node.js LTS and npm
 - MongoDB local instance or MongoDB Atlas database
 - Git
+
+## Hosted frontend
+
+A GitHub Actions workflow builds and deploys the React frontend to GitHub Pages whenever changes are pushed to `main`. After the first successful run, the frontend URL is expected to be:
+
+`https://adityagujar2.github.io/elevanceskills-mern-platform/`
+
+GitHub Pages hosts static frontend files only. The Express API and MongoDB are not hosted by GitHub Pages; deploy the backend to a Node.js host and configure `VITE_API_URL` as a GitHub Actions repository variable before expecting API-backed features to work online.
 
 ## Run locally
 
