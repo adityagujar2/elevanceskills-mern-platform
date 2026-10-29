@@ -83,7 +83,7 @@ export default function App() {
         return response.json();
       })
       .then((data) => setApiStatus(data.database === "connected" ? "API and database connected" : "API online · database not connected"))
-      .catch(() => setApiStatus("API not connected · start the server"));
+      .catch(() => setApiStatus("Demo mode · API not deployed"));
   }, []);
 
   const toggleTheme = () => setTheme((current) => current === "dark" ? "light" : "dark");
