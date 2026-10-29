@@ -4,6 +4,14 @@ import helmet from "helmet";
 import morgan from "morgan";
 import rateLimit from "express-rate-limit";
 import healthRouter from "./routes/health.routes.js";
+import authRouter from "./routes/auth.routes.js";
+import videosRouter from "./routes/videos.routes.js";
+import commentsRouter from "./routes/comments.routes.js";
+import subscriptionsRouter from "./routes/subscriptions.routes.js";
+import downloadsRouter from "./routes/downloads.routes.js";
+import securityRouter from "./routes/security.routes.js";
+import meetingsRouter from "./routes/meetings.routes.js";
+import watchProgressRouter from "./routes/watchprogress.routes.js";
 
 const app = express();
 
@@ -33,6 +41,14 @@ app.get("/", (_req, res) => {
 });
 
 app.use("/api/health", healthRouter);
+app.use("/api/auth", authRouter);
+app.use("/api/videos", videosRouter);
+app.use("/api/comments", commentsRouter);
+app.use("/api/subscriptions", subscriptionsRouter);
+app.use("/api/downloads", downloadsRouter);
+app.use("/api/security", securityRouter);
+app.use("/api/meetings", meetingsRouter);
+app.use("/api/watch-progress", watchProgressRouter);
 
 app.use((_req, res) => {
   res.status(404).json({ message: "Route not found" });
