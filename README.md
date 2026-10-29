@@ -20,13 +20,33 @@ An educational MERN stack project to demonstrate six video-platform modules for 
 - [x] Express API health endpoint
 - [x] MongoDB connection support
 - [x] Environment-variable examples
-- [ ] Authentication, registration and OTP verification
-- [ ] Commenting, translation and moderation
-- [ ] Subscription plans and verified test payments
-- [ ] Download authorization and quotas
-- [ ] Custom video player and playback progress
-- [ ] Real-time video calls
-- [ ] Automated tests and final internship report
+- [x] Registration/login API with bcrypt password hashing and JWT authentication
+- [x] Comment API baseline: create, edit, delete, reactions, reports and basic abuse checks
+- [x] MongoDB models for users, videos, comments, reports, subscriptions and downloads
+- [x] Plan policy and daily download quota baseline
+- [x] Theme preference endpoint and watch-progress API baseline
+- [x] Meeting-room metadata API baseline
+- [ ] Email/mobile OTP delivery and persistent login audit records
+- [ ] Translation provider, robust multilingual moderation and CAPTCHA integration
+- [ ] Razorpay order creation, signature verification, webhooks and invoices
+- [ ] Protected media storage and atomic download quota reservation
+- [ ] Full custom player UI integrated with persistent watch progress
+- [ ] WebRTC signaling, group media routing and in-call controls
+- [ ] Automated test suite, deployment verification and final internship report
+
+## API routes available in the current scaffold
+
+- `GET /api/health` — API and MongoDB connection status
+- `POST /api/auth/register`, `POST /api/auth/login`, `GET /api/auth/me` — basic account API
+- `GET /api/videos`, `GET /api/videos/:id` — video catalogue/access baseline
+- `GET /api/comments/video/:videoId`, `POST /api/comments`, `PATCH /api/comments/:id`, `DELETE /api/comments/:id`, `POST /api/comments/:id/report`, `POST /api/comments/:id/reaction`
+- `GET /api/subscriptions/plans`, `GET /api/subscriptions/me`
+- `GET /api/downloads/me`, `POST /api/downloads/:videoId`
+- `PATCH /api/security/theme`, `GET /api/security/logins`, `POST /api/security/otp/verify`
+- `POST /api/meetings`, `GET /api/meetings/:id`
+- `GET /api/watch-progress/:videoId`, `PUT /api/watch-progress/:videoId`
+
+Routes marked as a baseline or placeholder are not production-complete. In particular, paid subscriptions are not activated, OTP is not delivered, watch progress and meeting rooms currently use in-memory demo storage, and media delivery requires a protected storage provider. Review and test all code before submitting it for evaluation.
 
 ## Planned modules
 
